@@ -1,0 +1,23 @@
+<div class="grid grid-cols-5 gap-4 pt-10">
+  <form>
+  <div *ngFor="let card of cards" class="">
+  <mat-card class="">
+    <mat-card-header>
+      <mat-card-title>{{decode(card.question.toString())}}</mat-card-title>
+      <mat-card-subtitle>Type: {{card.type}} , Difficulty: {{card.difficulty}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div>
+      <input type="radio" name=""><label>{{card.correct_answer}}</label>
+      </div>
+
+      <div *ngFor="let incorrect_answer of card.incorrect_answers">
+        <input type="radio" name=""><label>{{incorrect_answer}}</label>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+  </div>
+  </form>
+</div>
