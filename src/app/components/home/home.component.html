@@ -1,23 +1,25 @@
 <div class="grid grid-cols-5 gap-4 pt-10">
-  <form>
   <div *ngFor="let card of cards" class="">
-  <mat-card class="">
+    <div *ngIf="card==null;then nil else notnil"></div>
+    <ng-template #nil></ng-template>
+    <ng-template #notnil>
+    <mat-card class="">
     <mat-card-header>
       <mat-card-title>{{decode(card.question.toString())}}</mat-card-title>
       <mat-card-subtitle>Type: {{card.type}} , Difficulty: {{card.difficulty}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
 
-      <div>
-      <input type="radio" name=""><label>{{card.correct_answer}}</label>
-      </div>
-
-      <div *ngFor="let incorrect_answer of card.incorrect_answers">
-        <input type="radio" name=""><label>{{incorrect_answer}}</label>
-      </div>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="valueFromRadio">
+        <mat-radio-button class="p-2" value="1">{{decode(card.correct_answer)}}</mat-radio-button>
+        <mat-radio-button value="0" class="p-2" *ngFor="let incorrect_answer of card.incorrect_answers">{{decode(incorrect_answer)}}</mat-radio-button>
+      </mat-radio-group>
 
     </mat-card-content>
+    <button mat-button type="submit" (click)="getAns(valueFromRadio,card.question)">Submit</button>
   </mat-card>
-  </div>
-  </form>
+    </ng-template>
+    </div>
+
+  <h1 class="w-screen text-8xl">Score: {{count}}</h1>
 </div>

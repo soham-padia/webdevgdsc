@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import {HomeComponent} from "./home.component";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
+import {MatRadioModule} from "@angular/material/radio";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -13,7 +15,9 @@ import {MatButtonModule} from "@angular/material/button";
   imports: [
     CommonModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioModule,
+    FormsModule
   ]
 })
 export class HomeModule { }
