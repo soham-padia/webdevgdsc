@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Steps to start on independent platform
 #### Requirements:
-Node (`https://nodejs.org/en/download/`) and git-scm(`https://git-scm.com/`) should be installed
+[Node](https://nodejs.org/en/download/) and [git-scm](https://git-scm.com/) should be installed
 
 #### Steps:
 1) Go to preferred directory in cmd or terminal and type `git clone https://github.com/solow-crypt/webdevgdsc.git`
