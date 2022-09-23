@@ -1,6 +1,6 @@
 <div class="grid grid-cols-5 gap-4 pt-10">
   <div *ngFor="let card of cards" class="">
-    <div *ngIf="card==null;then nil else notnil"></div>
+    <div *ngIf="card.question=='';then nil else notnil"></div>
     <ng-template #nil></ng-template>
     <ng-template #notnil>
     <mat-card class="">
@@ -21,5 +21,5 @@
     </ng-template>
     </div>
 
-  <h1 class="w-screen text-8xl">Score: {{count}}</h1>
+  <h1 class="w-screen text-8xl">Score: {{count}}/10</h1>
 </div>
